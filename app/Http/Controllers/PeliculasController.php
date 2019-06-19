@@ -25,8 +25,21 @@ class PeliculasController extends Controller
 
     // Metodo para crear un nuevo registro en la tabla
     function create(Request $request){
-        // dd($request->all());
         $peliculas = Peliculas::create($request->all());
+        return response()->json($peliculas,200);
+    }
+    
+    // Metodo para actualizar un registro en la tabla
+    function update(Request $request, $id){
+        $peliculas = Peliculas::findorfail($id);
+        $peliculas -> update($request->json()->all());
+        return response()->json($peliculas,200);
+    }
+    
+    // Metodo para actualizar un registro en la tabla
+    function destroy(Request $request, $id){
+        $peliculas = Peliculas::findorfail($id); //para encontrar un registro por id
+        $peliculas -> delete();
         return response()->json($peliculas,200);
     }
 }

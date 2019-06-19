@@ -24,3 +24,9 @@ $router->get('peliculas/{id}', 'PeliculasController@show');
 
 // Crear un nuevo registro en la tabla
 $router->post('peliculas', 'PeliculasController@create');
+
+// Actualiza un registro especifico
+$router->put('peliculas/{id}', 'PeliculasController@update');
+
+// Elimina un registro especifico
+$router->delete('peliculas/{id}', 'PeliculasController@destroy');
