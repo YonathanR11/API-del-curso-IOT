@@ -21,3 +21,6 @@ $router->get('peliculas', 'PeliculasController@index');
 
 // Muestra solo una pelicula especifica
 $router->get('peliculas/{id}', 'PeliculasController@show');
+
+// Crear un nuevo registro en la tabla
+$router->post('peliculas', 'PeliculasController@create');
